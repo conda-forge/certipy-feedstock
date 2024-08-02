@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - certipy = certipy.command_line:main
@@ -28,7 +28,10 @@ test:
   imports:
     - certipy
   commands:
+    - pip check
     - certipy test
+  requires:
+    - pip
 
 about:
   home: https://github.com/LLNL/certipy
