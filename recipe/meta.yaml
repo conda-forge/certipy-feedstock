@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 41b5202b8ce66cdd081833eae1ca68f981136db1d4e9372fa670acea9d1478ea
+  patches:
+    - pr21.patch
 
 build:
   noarch: python
@@ -25,7 +27,6 @@ requirements:
   run:
     - python >=3.7
     - cryptography
-    - ipaddress
 
 test:
   imports:
