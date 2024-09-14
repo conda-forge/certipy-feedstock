@@ -1,0 +1,26 @@
+From 76a3176548b8bb7c9e29848e976c89c289599b3f Mon Sep 17 00:00:00 2001
+From: Min RK <benjaminrk@gmail.com>
+Date: Sat, 14 Sep 2024 09:16:39 +0200
+Subject: [PATCH] remove ipaddress from dependencies
+
+ipaddress is in the standard library, ipaddress on pypi is a backport for older Pythons than we support
+---
+ pyproject.toml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/pyproject.toml b/pyproject.toml
+index 1194800..0e5a21e 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -38,7 +38,7 @@ classifiers=[
+ ]
+ keywords = ["pki", "ssl", "tls", "certificates"]
+ requires-python = ">=3.7"
+-dependencies = ["cryptography", "ipaddress"]
++dependencies = ["cryptography"]
+ 
+ [project.optional-dependencies]
+ dev = ["pytest", "flask", "build", "requests", "pre-commit", "ruff", "bump-my-version"]
+-- 
+2.45.0
+
