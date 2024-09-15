@@ -1,5 +1,5 @@
 {% set name = "certipy" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 41b5202b8ce66cdd081833eae1ca68f981136db1d4e9372fa670acea9d1478ea
+  sha256: 0c0ea7b25248b42fb930f30173a78c029e6ba67e2ef9598ca4470d8975c9cbb6
   patches:
     - pr21.patch
 
