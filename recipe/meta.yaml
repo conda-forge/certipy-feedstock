@@ -6,24 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 0c0ea7b25248b42fb930f30173a78c029e6ba67e2ef9598ca4470d8975c9cbb6
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - certipy = certipy.command_line:main
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - setuptools
     - setuptools_scm
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - cryptography
 
 test:
@@ -34,6 +34,7 @@ test:
     - certipy test
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/LLNL/certipy
