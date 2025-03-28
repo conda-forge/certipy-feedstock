@@ -1,5 +1,5 @@
 {% set name = "certipy" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0c0ea7b25248b42fb930f30173a78c029e6ba67e2ef9598ca4470d8975c9cbb6
+  sha256: fef1f3d8819ee29c4c67719171c988302823dfe0b6cfbb47d249f374809ba05e
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - certipy = certipy.command_line:main
